@@ -1,5 +1,5 @@
 DEPENDENCIES
-  eol-sensu-wrapper
+  gna-sensu-wrapper
     path: .
     metadata: true
 
@@ -12,7 +12,7 @@ GRAPH
     windows (>= 0.0.0)
   build-essential (2.1.3)
   chef_handler (1.1.6)
-  eol-sensu-wrapper (0.1.4)
+  gna-sensu-wrapper (0.1.4)
     sensu (= 2.6.0)
     uchiwa (= 1.0.0)
   erlang (1.5.6)

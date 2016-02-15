@@ -13,5 +13,5 @@ suites:
   - name: default
     data_bags_path: "test/integration/data_bags"
     run_list:
-      - recipe[eol-sensu-wrapper::default]
+      - recipe[gna-sensu-wrapper::default]
     attributes:

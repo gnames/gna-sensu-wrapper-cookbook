@@ -3,7 +3,7 @@ master_address = cnf["master_address"] || node["ipaddress"]
 additional_attributes = cnf["additional"] || {}
 
 if cnf[node.name] && cnf[node.name]["roles"]
-  node.override["eol_sensu_wrapper"]["roles"] = cnf[node.name]["roles"]
+  node.override["gna_sensu_wrapper"]["roles"] = cnf[node.name]["roles"]
 end
 
 node.override["sensu"]["rabbitmq"]["host"] = master_address
@@ -29,10 +29,10 @@ File.umask(0022)
 package "sysstat"
 
 sensu_gem "sensu-plugin" do
-  version node["eol_sensu_wrapper"]["sensu_plugin_version"]
+  version node["gna_sensu_wrapper"]["sensu_plugin_version"]
 end
 
-unless (node["eol_sensu_wrapper"]["roles"] & %w(mysql sensu)).empty?
+unless (node["gna_sensu_wrapper"]["roles"] & %w(mysql sensu)).empty?
   sensu_gem "mysql2"
   sensu_gem "inifile"
 end
@@ -69,7 +69,7 @@ end
 
 sensu_client node.name do
   address node["ipaddress"]
-  subscriptions node["eol_sensu_wrapper"]["roles"] + ["all"]
+  subscriptions node["gna_sensu_wrapper"]["roles"] + ["all"]
   additional(additional_attributes)
 end
 
@@ -84,7 +84,7 @@ end
 
 log "Adding Handlers"
 
-include_recipe "eol-sensu-wrapper::handlers"
+include_recipe "gna-sensu-wrapper::handlers"
 
 include_recipe "sensu::client_service"
 

@@ -1,11 +1,11 @@
 #!/opt/sensu/embedded/bin/ruby
-# EOL production specific: script checks if all expected containers
+# GNA production specific: script checks if all expected containers
 # are running on a node
 
 require "sensu-plugin/check/cli"
 
 class CheckDockerContainers < Sensu::Plugin::Check::CLI
-  EXPECTED_CONTAINERS="/eol/shared/containers"
+  EXPECTED_CONTAINERS="/opt/gna/shared/containers"
 
   def run
     running = `/usr/local/bin/docker_names`.strip.split.sort

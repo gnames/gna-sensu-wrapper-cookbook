@@ -1,19 +1,19 @@
-eol-sensu-wrapper Cookbook
+gna-sensu-wrapper Cookbook
 ===========================
 
-EOL Sensu cookbook installs and configures a Sensu server and clients to
+GNA Sensu cookbook installs and configures a Sensu server and clients to
 monitor servers' state and collect statistical metrics. This cookbook requires
 creation of  2 data bags **sensu** and **sensu_checks** (see description below)
 
 Requirements
 ------------
 - `sensu` -- Sensu cookbook provides all the resources required by
-  eol-sensu-wrapper
+  gna-sensu-wrapper
 
 Attributes
 ----------
 
-#### eol-sensu-cookbook::default
+#### gna-sensu-cookbook::default
 <table>
   <tr>
     <th>Key</th>
@@ -40,7 +40,7 @@ Attributes
     <td><tt>0.7.1-1</tt></td>
   </tr>
   <tr>
-    <td><tt>["eol_sensu_wrapper"]["roles"]</tt></td>
+    <td><tt>["gna_sensu_wrapper"]["roles"]</tt></td>
     <td>Array</td>
     <td>Sets roles which define which checks and metrics to run</td>
     <td><tt>Empty</tt></td>
@@ -100,16 +100,16 @@ For this example lets assume the following:
 * You are interested in one metric plugin `metric-sysopia.rb`
 * You want to send alerts to hipchat using `hipchat.rb` handler
 
-In your own cookbook include the default `eol-sensu-wrapper` recipe:
+In your own cookbook include the default `gna-sensu-wrapper` recipe:
 
 ```ruby
-include_recipe "eol-sensu-wrapper"
+include_recipe "gna-sensu-wrapper"
 ```
 You can also include the recipe into a node's or a role's `run_list`:
 
 ```json
 {"run_list":
-  ["recipe[eol-sensu-wrapper]"]
+  ["recipe[gna-sensu-wrapper]"]
 }
 ```
 
@@ -240,8 +240,8 @@ Copyright: 2015, [Marine Biological Laboratory][8]
 
 Licensed under the [MIT License][9]
 
-[1]: https://github.com/EOL/eol-sensu-wrapper-cookbook/tree/master/files/default/plugins
-[2]: https://github.com/EOL/eol-sensu-wrapper-cookbook/tree/master/files/default/handlers
+[1]: https://github.com/gnames/gna-sensu-wrapper-cookbook/tree/master/files/default/plugins
+[2]: https://github.com/gnames/gna-sensu-wrapper-cookbook/tree/master/files/default/handlers
 [3]: https://github.com/sensu/sensu-community-plugins.git
 [4]: https://github.com/sensu/sensu-chef/blob/master/examples/ssl/generate_databag.rb
 [5]: http://sensuapp.org/docs
