@@ -1,7 +1,6 @@
 {
   "id": "check_disk",
   "command": "check-disk.rb -c 92 -w 87",
-  // "handlers": [ "ponymailer", "hipchat" ],
   "subscribers": [ "all" ],
   "interval": 30
 }

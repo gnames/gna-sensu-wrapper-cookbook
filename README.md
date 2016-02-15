@@ -71,7 +71,7 @@ Included handlers
 -----------------
 
 Sensu handlers allow send alerts from Sensu checks and metrics to various
-communication channels -- Twitter, Email, Hipchat, Gitter etc. For example
+communication channels -- Twitter, Email, Gitter etc. For example
 `ponymailer.rb` handler sends alerts by email to subscribed administrators.
 
 You can find included handlers in [files/default/handlers][2]. A comment on top
@@ -98,7 +98,6 @@ For this example lets assume the following:
 * A node which will be monitored has name `myserver.example.org` and IP 10.0.0.2
 * You are interested in one check plugin `check-disk.rb`
 * You are interested in one metric plugin `metric-sysopia.rb`
-* You want to send alerts to hipchat using `hipchat.rb` handler
 
 In your own cookbook include the default `gna-sensu-wrapper` recipe:
 
@@ -182,10 +181,6 @@ case `ponymailer`.
     "hostname": "localhost",
     "port": 25
   },
-  "hipchat": {
-    "apikey": "124",
-    "room": "Ops"
-  },
   "postfix": {
     "mydomain": "sensu.example.org",
     "myorigin": "sensu.example.org",
@@ -214,8 +209,8 @@ Sensu clients.
 {
   "id": "check_disk",
   "command": "check-disk.rb -c 95 -w 85",
-  "handlers": [ "ponymailer", "hipchat" ],
-  "subscribers": [ "all" ],
+  "handlers": [ "ponymailer" ],
+  "subscribers": [ "all" ]
   "interval": 3600
 }
 ```
