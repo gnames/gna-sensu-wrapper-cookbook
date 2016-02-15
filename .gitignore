@@ -1,0 +1,4 @@
+.bundle
+bundle_bin
+.kitchen/
+.kitchen.local.yml

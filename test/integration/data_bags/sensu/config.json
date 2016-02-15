@@ -1,0 +1,6 @@
+{
+  "id": "config",
+  "uchiwa_user": "sensu",
+  "uchiwa_password": "aktion60",
+  "uchiwa_port": "80"
+}
