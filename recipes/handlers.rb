@@ -1,6 +1,6 @@
 cnf = data_bag_item("sensu", "handlers")
 
-%w(sysopia ponymailer).each do |h|
+%w(sysopia ponymailer zoomailer).each do |h|
 
   log "Handler: #{h}"
 
